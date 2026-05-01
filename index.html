@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Strength Analyzer</h1>
+        
+        <div class="input-group">
+            <label for="password">Enter Password</label>
+            <input type="password" id="password" placeholder="Type your password here..." autocomplete="off">
+        </div>
+
+        <div class="strength-meter">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="strength-score">
+                <span class="score-value" id="scoreValue">0</span>
+                <span class="strength-label" id="strengthLabel">Very Weak</span>
+            </div>
+        </div>
+
+        <div class="criteria">
+            <div class="criteria-item">
+                <span class="criteria-icon" id="lengthIcon">
+                    <i data-lucide="x"></i>
+                </span>
+                <span>At least 8 characters</span>
+            </div>
+            <div class="criteria-item">
+                <span class="criteria-icon" id="uppercaseIcon">
+                    <i data-lucide="x"></i>
+                </span>
+                <span>Contains uppercase letter</span>
+            </div>
+            <div class="criteria-item">
+                <span class="criteria-icon" id="lowercaseIcon">
+                    <i data-lucide="x"></i>
+                </span>
+                <span>Contains lowercase letter</span>
+            </div>
+            <div class="criteria-item">
+                <span class="criteria-icon" id="numberIcon">
+                    <i data-lucide="x"></i>
+                </span>
+                <span>Contains number</span>
+            </div>
+            <div class="criteria-item">
+                <span class="criteria-icon" id="specialIcon">
+                    <i data-lucide="x"></i>
+                </span>
+                <span>Contains special character</span>
+            </div>
+        </div>
+
+        <div class="suggestions" id="suggestions" style="display: none;">
+            <h3>Suggested Stronger Passwords</h3>
+            <div id="suggestionList"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
